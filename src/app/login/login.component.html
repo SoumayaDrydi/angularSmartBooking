@@ -1,0 +1,81 @@
+<div class="body">
+  <div class="main">
+    <input type="checkbox" id="chk" aria-hidden="true" />
+
+    <div class="signup">
+      <form novalidate #signupForm="ngForm">
+        <label for="chk" aria-hidden="true">Login</label>
+
+        <div class="form-group">
+          <input
+            id="emailLogin"
+            type="email"
+            name="email"
+            placeholder="email@gmail.com"
+            required
+            pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+          />
+        </div>
+
+        <div class="form-group">
+          <input
+            id="passwordLogin"
+            type="password"
+            name="password"
+            placeholder="password"
+            required
+          />
+
+          <!-- Message d'erreur -->
+        </div>
+
+        <button routerLink="/admin">Login</button>
+      </form>
+    </div>
+
+    <div class="login">
+      <!--<form>
+            <label for="chk" aria-hidden="true">Inscription Entreprise</label>
+            <input type="text" name="txt"  required="">
+            <input type="text" name="txt"  required="">
+            <input type="text" name="txt" placeholder="localisation" required="">
+            <input type="text" name="txt" required="">
+            <input type="text" name="txt" placeholder="fax" required="">
+            <input type="email" name="email" placeholder="Email" required="">
+            <input type="file" name="logo" id="logo" placeholder="logo entreprise" required="">
+            <button routerLink="/partenaire">Sign up</button>
+  
+          </form>-->
+
+      <form novalidate #registreForm="ngForm">
+        <label for="chk" aria-hidden="true">Registre propritaire</label>
+
+        <div class="form-group">
+          <input id="cin" type="text" name="cin" placeholder="cin" />
+        </div>
+        <div class="form-group">
+          <input id="email" type="text" name="email" placeholder="email" />
+        </div>
+        <div class="form-group">
+          <input
+            id="password"
+            type="password"
+            name="password"
+            placeholder="password"
+          />
+        </div>
+
+        <div class="form-group">
+          <input
+            id="cfm"
+            type="password"
+            name="cfm"
+            placeholder="confirme password"
+          />
+        </div>
+
+        <button type="submit" [disabled]="!registreForm.valid">Registre</button>
+      </form>
+    </div>
+  </div>
+</div>
